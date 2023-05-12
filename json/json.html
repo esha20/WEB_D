@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <!-- <link rel="stylesheet" href="./css/pseudo.css"> -->
+</head>
+<body>
+    <h1>JSON TODOs LIST</h1>
+    <ul></ul>   
+    <!-- we will here add <ul> to add the names of the users and their information and display them on the website in the form of a list -->
+    <script>
+        // const user = {
+        //     "name":"Esha Mitra",
+        //     "age":21,
+        //     "isProgrammer":true,
+        //     "skills":["A", "b", "C"],
+        //     "address":{
+        //         "city":"ABC",
+        //         "state":"XYZ",
+        //         "country":"India"
+        //     }
+        // }
+        // console.log(user);              //logs the entire object
+        // console.log(user.name)          //access onlly the name and display it
+        // console.log(user.skills)        //output the entire skills array
+        // console.log(user.skills[0])     //outputs the particular element at 0th index of the array skills
+        // console.log(user.address.city)  //to access city inside of the object address
+
+        //or we can simply fetch the json file users.json
+        
+        //if there is a single user information in the users.json file 
+        //or if we want to accesa ll the users information as an array in user.json file
+        // fetch('users.json')
+        // .then(response => response.json())
+        // .then(json=>{
+        //     console.log(json);
+        // })
+
+        //for particularly accessing data
+        // fetch('users.json')
+        // .then(response => response.json())
+        // .then(json=>{
+        //     console.log(json.users[0].adress.city);
+        // })
+
+        //to convert the json object into string so as to display in the server
+        // const user = {
+        //     "name":"Esha Mitra",
+        //     "age":21,
+        //     "isProgrammer":true,
+        //     "skills":["A", "b", "C"],
+        //     "address":{
+        //         "city":"ABC",
+        //         "state":"XYZ",
+        //         "country":"India"
+        //     }
+        // }
+        // console.log(JSON.stringify(user)) 
+
+        // to convert the string into object back again
+        // let userstr = {string-from-the-above-code}
+        // console.log(JSON.parse(userstr))
+
+        //now we gonna display the users in the usrs.json to the page.
+        // let list = ""
+        // fetch('users.json')
+        // .then(response => response.json())
+        // .then(json=>{
+        //     json.users.forEach(user => {
+        //         list += `<li>${user.name}</li>`
+        //     });
+        //     document.querySelector("ul").innerHTML = list;
+
+        // });
+
+        //fetching the data from an api - from json placeholder
+        //for the same user list display 
+        let list = ""
+        let users = ""
+        fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response =>response.json())
+        .then(json => {
+            // users= json;
+            json.forEach(todo => {
+                list+= `<li>${todo.title}</li>`
+            });
+            document.querySelector("ul").innerHTML = list
+            console.log(json);
+        })
+    </script>
+</body>
+</html>
