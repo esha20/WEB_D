@@ -1,0 +1,37 @@
+{
+    "users":[
+        {
+    "name":"Anjali Yadav",
+    "age":21,
+    "isProgrammer":false,
+    "skills":["c", "J", "P"],
+    "address":{
+        "city":"udaipur",
+        "state":"rajasthan",
+        "country":"India"
+    }
+},
+{
+    "name":"Arnab Mitra",
+    "age":18,
+    "isProgrammer":true,
+    "skills":["A", "b", "C"],
+    "address":{
+        "city":"ABC",
+        "state":"XYZ",
+        "country":"India"
+    }
+},
+{
+    "name":"Esha Mitra",
+    "age":21,
+    "isProgrammer":true,
+    "skills":["A", "b", "C"],
+    "address":{
+        "city":"ABC",
+        "state":"XYZ",
+        "country":"India"
+    }
+}
+    ]
+}
